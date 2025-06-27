@@ -65,3 +65,76 @@ function renderProduceCards(data) {
     btn.addEventListener('click', handleDeleteClick)
   );
 }
+
+// Filter logic
+function filterProduce() {
+  let filtered = [...produceData];
+
+  const selectedLocation = locationFilter.value;
+  const organicOnly = organicFilter.checked;
+
+  if (selectedLocation !== 'all') {
+    filtered = filtered.filter(item => item.location === selectedLocation);
+  }
+
+  if (organicOnly) {
+    filtered = filtered.filter(item => item.organic);
+  }
+
+  renderProduceCards(filtered);
+}
+
+// Add or update produce
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const formData = new FormData(produceForm);
+  const newProduce = {
+    name: formData.get('name').trim(),
+    farmer: formData.get('farmer').trim(),
+    price: parseFloat(formData.get('price')),
+    unit: formData.get('unit').trim(),
+    location: formData.get('location').trim(),
+    pickupDate: formData.get('pickupDate'),
+    deliveryDate: formData.get('deliveryDate'),
+    image: formData.get('image').trim(),
+    organic: formData.get('organic') === 'on',
+    available: true
+  };
+
+  const editId = produceForm.dataset.editId;
+
+  if (editId) {
+    // Update existing
+    fetch(`${API_URL}/${editId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newProduce)
+    })
+      .then(res => res.json())
+      .then(updated => {
+        const index = produceData.findIndex(p => p.id == editId);
+        produceData[index] = updated;
+        produceForm.reset();
+        delete produceForm.dataset.editId;
+        produceForm.querySelector('button').textContent = 'Add Produce';
+        filterProduce();
+      })
+      .catch(err => console.error('Error updating produce:', err));
+  } else {
+    // Create new
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newProduce)
+    })
+      .then(res => res.json())
+      .then(added => {
+        produceData.push(added);
+        produceForm.reset();
+        filterProduce();
+      })
+      .catch(err => console.error('Error adding produce:', err));
+  }
+}
+
