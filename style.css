@@ -68,3 +68,20 @@ section {
   background-color: #d32f2f;
 }
 
+#filters label {
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#filters select {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
