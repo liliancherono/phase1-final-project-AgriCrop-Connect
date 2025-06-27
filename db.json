@@ -1,0 +1,45 @@
+{
+  "produce": [
+    {
+      "id": "1",
+      "name": "tomatoes",
+      "farmer": "Harvest Hills",
+      "price": 3,
+      "unit": "$1.5 per lb",
+      "organic": true,
+      "location": "Nairobi",
+      "freshness": "fresh",
+      "image": "https://media.istockphoto.com/id/1419141035/photo/cut-red-tomato-close-up-in-a-box.jpg?s=1024x1024&w=is&k=20&c=7hFDTPOrPIaTARip38viDm1OJVc0-s_ojYPFnFuHt1o=",
+      "pickupDate": "2025-06-27",
+      "deliveryDate": "2025-06-30",
+      "available": true
+    },
+    {
+      "id": "3",
+      "name": "bricollis",
+      "farmer": "Green Valley",
+      "price": 1.8,
+      "unit": "per lb",
+      "organic": true,
+      "location": "California",
+      "freshness": "fresh",
+      "image": "https://media.istockphoto.com/id/479452642/photo/fresh-broccoli.jpg?s=1024x1024&w=is&k=20&c=3qH84x3SR-Yzfp0UFqeqa-QC7Iw7UecW5bm7H3XJLWE=",
+      "pickupDate": "2025-06-29",
+      "deliveryDate": "2025-07-02",
+      "available": true
+    },
+    {
+      "id": "7cda",
+      "name": "Carrots",
+      "farmer": "Harvest Hills",
+      "price": 3,
+      "unit": "per lb",
+      "location": "Nairobi",
+      "pickupDate": "0255-06-29",
+      "deliveryDate": "2025-05-02",
+      "image": "https://media.istockphoto.com/id/470162568/photo/carrot-heap-of-vegetable-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=lYrAvPhQFrQinIDEGUERB5xnSE8SoIb5WM8ThiKQsvc=",
+      "organic": false,
+      "available": true
+    }
+  ]
+}
