@@ -37,3 +37,22 @@ section {
   gap: 0.5rem;
 }
 
+.card-actions .edit-btn,
+.card-actions .delete-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Edit button style */
+.card-actions .edit-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+}
+
+
+
