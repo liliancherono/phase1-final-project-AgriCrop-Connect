@@ -123,3 +123,42 @@ section {
   margin-bottom: 0.2rem;
 }
 
+#add-produce form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#add-produce form input[type="text"],
+#add-produce form input[type="number"],
+#add-produce form input[type="date"],
+#add-produce form input[type="url"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+#add-produce form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  grid-column: span 2;
+  font-weight: 600;
+}
+
+#add-produce button {
+  grid-column: span 2;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-produce button:hover {
+  background-color: #219150;
+}
