@@ -162,3 +162,15 @@ section {
 #add-produce button:hover {
   background-color: #219150;
 }
+
+/* Responsive */
+@media (max-width: 600px) {
+  #add-produce form {
+    grid-template-columns: 1fr;
+  }
+
+  #filters label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
