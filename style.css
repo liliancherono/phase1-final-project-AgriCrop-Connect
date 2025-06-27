@@ -54,5 +54,17 @@ section {
   color: white;
 }
 
+.card-actions .edit-btn:hover {
+  background-color: #3e8e41;
+}
 
+/* Delete button style */
+.card-actions .delete-btn {
+  background-color: #f44336; /* red */
+  color: white;
+}
+
+.card-actions .delete-btn:hover {
+  background-color: #d32f2f;
+}
 
