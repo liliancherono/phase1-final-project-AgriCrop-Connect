@@ -138,3 +138,47 @@ function handleFormSubmit(event) {
   }
 }
 
+// Handle edit click
+function handleEditClick(event) {
+  const card = event.target.closest('.produce-card');
+  const id = card.dataset.id;
+  const item = produceData.find(p => p.id == id);
+
+  produceForm.name.value = item.name;
+  produceForm.farmer.value = item.farmer;
+  produceForm.price.value = item.price;
+  produceForm.unit.value = item.unit;
+  produceForm.location.value = item.location;
+  produceForm.pickupDate.value = item.pickupDate;
+  produceForm.deliveryDate.value = item.deliveryDate;
+  produceForm.image.value = item.image;
+  produceForm.organic.checked = item.organic;
+
+  produceForm.dataset.editId = id;
+  produceForm.querySelector('button').textContent = 'Update Produce';
+}
+
+// Handle delete click
+function handleDeleteClick(event) {
+  const card = event.target.closest('.produce-card');
+  const id = card.dataset.id;
+
+  if (confirm('Are you sure you want to delete this produce item?')) {
+    fetch(`${API_URL}/${id}`, {
+      method: 'DELETE'
+    })
+      .then(() => {
+        produceData = produceData.filter(p => p.id != id);
+        filterProduce();
+      })
+      .catch(err => console.error('Error deleting produce:', err));
+  }
+}
+
+// Initial setup
+document.addEventListener('DOMContentLoaded', () => {
+  fetchProduce();
+  locationFilter.addEventListener('change', filterProduce);
+  organicFilter.addEventListener('change', filterProduce);
+  produceForm.addEventListener('submit', handleFormSubmit);
+});
