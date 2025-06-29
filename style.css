@@ -144,13 +144,6 @@ section {
   margin-bottom: 0.2rem;
 }
 
-#phone{
- padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #bbb;
-  border-radius: 4px;                                
-}
-
 #add-produce form {
   display: grid;
   grid-template-columns: 1fr 1fr;
