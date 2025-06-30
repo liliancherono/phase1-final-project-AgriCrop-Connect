@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/produce';
+const API_URL = 'https://json-server-a3m4.onrender.com/produce';
 
 const produceCards = document.getElementById('produceCards');
 const locationFilter = document.getElementById('locationFilter');
